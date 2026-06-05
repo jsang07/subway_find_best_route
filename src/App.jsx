@@ -59,8 +59,8 @@ export default function App() {
   // 1. CSV 데이터 파싱
   useEffect(() => {
     Promise.all([
-      fetch('/subway.csv').then(res => res.arrayBuffer()),
-      fetch('/station_coords.csv').then(res => res.arrayBuffer())
+      fetch(import.meta.env.BASE_URL + 'subway.csv').then(res => res.arrayBuffer()),
+      fetch(import.meta.env.BASE_URL + 'station_coords.csv').then(res => res.arrayBuffer())
     ]).then(([buffer1, buffer2]) => {
       
       const text1 = new TextDecoder('euc-kr').decode(buffer1);
