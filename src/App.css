@@ -1,0 +1,191 @@
+:root {
+  --bg-color: #f2f4f6;
+  --box-bg: #ffffff;
+  --text-main: #333d4b;
+  --text-sub: #8b95a1;
+  --border-color: #e5e8eb;
+  --primary: #3182f6;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  /* padding: 20px; */
+  color: var(--text-main);
+}
+
+.app-container {
+  width: 100%;
+  max-width: 420px;
+}
+
+.map-header h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  background: var(--box-bg);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 16px;
+  z-index: 2;
+}
+
+.start-dot { background-color: #3182f6; }
+.end-dot { background-color: #f04452; }
+
+.route-line {
+  position: absolute;
+  left: 29px;
+  top: 45px;
+  bottom: 105px;
+  width: 2px;
+  background-color: #e5e8eb;
+  z-index: 1;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 0;
+  outline: none;
+  border-bottom: 1px solid transparent;
+}
+
+.search-box input:focus {
+  border-bottom: 1px solid var(--primary);
+}
+
+.btn-search {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 네이버 지도 스타일 타임라인 결과창 */
+.result-container {
+  background: var(--box-bg);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  animation: fadeIn 0.3s ease;
+}
+
+.summary {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.summary h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: var(--text-sub);
+}
+
+.distance {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-right: 12px;
+}
+
+.stops {
+  font-size: 15px;
+  color: var(--text-sub);
+  font-weight: 500;
+}
+
+/* 타임라인 핵심 UI */
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-item {
+  display: flex;
+  min-height: 48px;
+}
+
+.timeline-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  margin-right: 16px;
+}
+
+.node {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 4px solid;
+  z-index: 2;
+  margin-top: 2px;
+}
+
+.line {
+  width: 4px;
+  flex: 1;
+  margin: -2px 0;
+  opacity: 0.8;
+}
+
+.timeline-content {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  padding-bottom: 20px;
+}
+
+.station-name {
+  font-size: 16px;
+  color: var(--text-main);
+  margin-right: 10px;
+}
+
+.station-name.bold {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.badge {
+  color: white;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
